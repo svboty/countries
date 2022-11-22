@@ -26,5 +26,22 @@
 <a href="/countries-list">Сбросить фильтр</a>
 </footer>
 {% endif  %}
+<div class="pagination">
+    <span class="step-links">
+        {% if data.has_previous %}
+            <a href="?page=1">&laquo; Первая</a>
+            <a href="?page={{ data.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ data.number }} of {{ data.paginator.num_pages }}.
+        </span>
+
+        {% if data.has_next %}
+            <a href="?page={{ data.next_page_number }}">Следующая</a>
+            <a href="?page={{ data.paginator.num_pages }}">Последняя &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 </body>
 </html>
