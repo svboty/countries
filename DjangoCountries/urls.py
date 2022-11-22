@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main_page),
     path('countries-list/', views.countries_list),
+    path('country/<str:name>', views.country),
 ]

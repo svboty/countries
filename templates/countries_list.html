@@ -10,7 +10,7 @@
 </header>
 <ol>
     {% for item in data %}
-        <li>{{ item.country | title }}</li>
+        <li><a href="/country/{{ item.country }}"> {{ item.country | title }}</a></li>
     {% endfor %}
 </ol>
 </body>
