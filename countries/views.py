@@ -5,6 +5,8 @@ from .helpers import Country
 
 data = Country().data
 
+alphabet = list('abcdefghijklmnopqrstuvwxyz')
+
 
 def main_page(request):
     context = {}
@@ -13,7 +15,8 @@ def main_page(request):
 
 def countries_list(request):
     context = {
-        "data": data
+        "data": data,
+        "alphabet": alphabet
     }
     return render(request, 'countries_list.html', context)
 
@@ -26,3 +29,17 @@ def country(request, name):
             }
             return render(request, 'country.html', context)
     raise Http404(f'Страна "{name}" не найдена')
+
+
+def country_by_letter(request, letter):
+    countries = []
+    for item in data:
+        if item['country'].lower().startswith(letter.lower()):
+            countries.append(item)
+    context = {
+        "data": countries,
+        "alphabet": alphabet,
+        "letter": letter
+    }
+    return render(request, 'countries_list.html', context)
+
