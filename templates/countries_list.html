@@ -10,22 +10,23 @@
 </header>
     <h3>Алфавитный указатль</h3>
     {% for letter in alphabet %}
-        <a href="/countries/{{ letter}}">{{ letter | title }}</a>
+        <a href={% url 'countries-by-letter' letter %}>{{ letter | title }}</a>
     {% endfor %}
 {% if letter %}
     <h3>Фильтр по странам на букву {{ letter | title}}</h3>
-    <a href="/countries-list">Сбросить фильтр</a>
+    <a href={% url 'countries-list' %}>Сбросить фильтр</a>
 {% endif  %}
 <ol>
     {% for item in data %}
-        <li><a href="/country/{{ item.id }}"> {{ item.name | title }}</a></li>
+        <li><a href={% url 'country-detail' item.id %}> {{ item.name | title }}</a></li>
     {% endfor %}
 </ol>
 {% if letter %}
 <footer>
-<a href="/countries-list">Сбросить фильтр</a>
+<a href={% url 'countries-list' %}>>Сбросить фильтр</a>
 </footer>
 {% endif  %}
+{% if data.paginator %}
 <div class="pagination">
     <span class="step-links">
         {% if data.has_previous %}
@@ -43,5 +44,6 @@
         {% endif %}
     </span>
 </div>
+{% endif %}
 </body>
 </html>

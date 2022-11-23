@@ -10,7 +10,7 @@
 </header>
 <ol>
     {% for country in countries %}
-        <li><a href="/country/{{ country.id }}"> {{ country.name | title }}</a></li>
+        <li><a href={% url 'country-detail' country.id %}> {{ country.name | title }}</a></li>
     {% endfor %}
 </ol>
 </body>

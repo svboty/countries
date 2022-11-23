@@ -21,9 +21,9 @@ from countries import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main_page),
-    path('countries-list/', views.countries_list),
-    path('country/<int:id>', views.country),
-    path('countries/<str:letter>', views.country_by_letter),
-    path('languages/', views.languages_list),
-    path('language/<int:id>', views.language),
+    path('countries-list/', views.countries_list, name='countries-list'),
+    path('country/<int:id>', views.country, name='country-detail'),
+    path('countries-list/<str:letter>', views.country_by_letter, name='countries-by-letter'),
+    path('languages/', views.languages_list, name='languages-list'),
+    path('language/<int:id>', views.language, name='language-detail'),
 ]
