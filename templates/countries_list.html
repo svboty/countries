@@ -18,7 +18,7 @@
 {% endif  %}
 <ol>
     {% for item in data %}
-        <li><a href="/country/{{ item.country }}"> {{ item.country | title }}</a></li>
+        <li><a href="/country/{{ item.id }}"> {{ item.name | title }}</a></li>
     {% endfor %}
 </ol>
 {% if letter %}

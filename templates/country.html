@@ -6,12 +6,12 @@
 </head>
 <body>
 <header>
-    <h2>{{ country.country | title}}</h2>
+    <h2>{{ country.name | title}}</h2>
 </header>
 <h3>В этой стране разговаривают на следующих языках:</h3>
 <ul>
-    {%  for lang in country.languages %}
-    <li>{{ lang }}</li>
+    {%  for lang in country.languages.all %}
+    <li>{{ lang.label}}</li>
     {% endfor %}
 </ul>
 <a href="/countries-list">Список стран</a>

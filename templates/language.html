@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ language }}</title>
+    <title>{{ language.lable }}</title>
 </head>
 <body>
 <header>
-    <h2>На {{ language }} языке разговаривают в странах</h2>
+    <h2>На {{ language.lable }} языке разговаривают в странах</h2>
 </header>
 <ol>
     {% for country in countries %}
-        <li><a href="/country/{{ country }}"> {{ country | title }}</a></li>
+        <li><a href="/country/{{ country.id }}"> {{ country.name | title }}</a></li>
     {% endfor %}
 </ol>
 </body>

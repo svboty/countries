@@ -10,7 +10,7 @@
 </header>
 <ol>
     {% for lang in languages %}
-        <li><a href="/language/{{ lang }}"> {{ lang | title }}</a></li>
+        <li><a href="/language/{{ lang.id }}"> {{ lang.label | title }}</a></li>
     {% endfor %}
 </ol>
 </body>
