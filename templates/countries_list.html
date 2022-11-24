@@ -13,6 +13,7 @@
         <a href={% url 'countries-by-letter' letter %}>{{ letter | title }}</a>
     {% endfor %}
 {% if letter %}
+    {# FIXME: а зачем "сбросить фильтр" два раза? ТУТ #}
     <h3>Фильтр по странам на букву {{ letter | title}}</h3>
     <a href={% url 'countries-list' %}>Сбросить фильтр</a>
 {% endif  %}
@@ -23,6 +24,7 @@
 </ol>
 {% if letter %}
 <footer>
+{# FIXME: и ТУТ #}
 <a href={% url 'countries-list' %}>>Сбросить фильтр</a>
 </footer>
 {% endif  %}

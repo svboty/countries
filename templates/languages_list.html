@@ -9,8 +9,10 @@
     <h2>Список языков</h2>
 </header>
 <ol>
+    {# FIXME: если перейти по ссылке "Список стран", то на эту страницу по ссылкам вернуться невозможно #}
     {% for lang in languages %}
-        <li><a href={% url 'languages-list' lang.id %}> {{ lang.label | title }}</a></li>
+        {#  FIXME: Тут используется неправильное название url'а вместо languages-list должно быть language-detail #}
+        <li><a href={% url 'language-detail' lang.id %}> {{ lang.label | title }}</a></li>
     {% endfor %}
 </ol>
 </body>
