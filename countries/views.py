@@ -9,6 +9,10 @@ from countries.models import Country, Language
 
 logger = logging.getLogger(__name__)
 
+# FIXME: строку букв не обязательно оборачивать в список, строка тоже итерируемый объект.
+#  А еще, сроку из латинских букв можно получить так:
+#  import string
+#  alphabet = string.ascii_lowercase
 alphabet = list('abcdefghijklmnopqrstuvwxyz')
 
 
